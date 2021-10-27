@@ -1,0 +1,17 @@
+import 'package:dartz/dartz.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/core/error/failures.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/core/usecases/usecase.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/data/{{#snakeCase}}{{feature}}{{/snakeCase}}/models/{{#snakeCase}}{{usecases.name}}_model{{/snakeCase}}.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/entities/{{#snakeCase}}{{usecases.name}}{{/snakeCase}}_entity.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/repositories/{{#snakeCase}}{{feature}}{{/snakeCase}}_repository.dart';
+
+class {{#pascalCase}}{{usecases.method}} {{usecases.name}}{{/pascalCase}}Usecase extends UseCase<{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity,{{#usecases.isHaveBody}}{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Body{{/usecases.isHaveBody}}{{^usecases.isHaveBody}} NoParams{{/usecases.isHaveBody}}> {
+  {{#pascalCase}}{{usecases.method}} {{usecases.name}}{{/pascalCase}}Usecase(this._repository);
+
+  final {{#pascalCase}}{{feature}}{{/pascalCase}}Repository _repository;
+
+  @override
+  Future<Either<Failure, {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity>> call({{#usecases.isHaveBody}}{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Body params{{/usecases.isHaveBody}}) {
+    return _repository.{{#lowerCase}}{{usecases.method}}{{/lowerCase}}{{#pascalCase}}{{usecases.name}}{{/pascalCase}}({{#usecases.isHaveBody}}params{{/usecases.isHaveBody}});
+  }
+}

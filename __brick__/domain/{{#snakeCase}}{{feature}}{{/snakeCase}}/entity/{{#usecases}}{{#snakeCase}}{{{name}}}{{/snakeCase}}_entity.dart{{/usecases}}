@@ -1,0 +1,9 @@
+import 'package:equatable/equatable.dart';
+
+class {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity extends Equatable {
+  // TODO add {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity
+}
+
+class Data{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity extends Equatable {
+    // TODO add Data{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity
+}
