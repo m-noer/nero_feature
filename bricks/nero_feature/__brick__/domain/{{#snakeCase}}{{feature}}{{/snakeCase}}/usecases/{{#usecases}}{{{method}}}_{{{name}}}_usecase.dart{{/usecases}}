@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/core/error/failures.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/core/usecases/usecase.dart';
-{{#usecases.isHaveBody}}import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/data/{{#snakeCase}}{{feature}}{{/snakeCase}}/models/models{{/snakeCase}}.dart';{{/usecases.isHaveBody}}
+{{#usecases.isHaveBody}}
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/data/{{#snakeCase}}{{feature}}{{/snakeCase}}/models/models{{/snakeCase}}.dart';
+{{/usecases.isHaveBody}}
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/entities/{{#snakeCase}}{{usecases.name}}{{/snakeCase}}_entity.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/repositories/{{#snakeCase}}{{feature}}{{/snakeCase}}_repository.dart';
 
