@@ -1,4 +1,4 @@
-name: nero_features
+name: nero_feature
 description: A new brick created with the Mason CLI.
 vars:
   - usecases
