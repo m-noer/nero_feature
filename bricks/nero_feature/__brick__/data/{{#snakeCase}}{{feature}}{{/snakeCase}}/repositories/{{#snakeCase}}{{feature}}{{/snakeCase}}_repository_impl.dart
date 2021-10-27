@@ -17,9 +17,9 @@ class {{#pascalCase}}{{feature}}{{/pascalCase}}RepositoryImpl implements {{#pasc
 
   {{#usecases}}
   @override
-  Future<Either<Failure, {{#pascalCase}}{{name}}{{/pascalCase}}Entity>> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#usecases.isHaveBody}}{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Body params{{/usecases.isHaveBody}}) async {
+  Future<Either<Failure, {{#pascalCase}}{{name}}{{/pascalCase}}Entity>> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{name}}{{/pascalCase}}Body body{{/isHaveBody}}) async {
     try {
-      final remote{{#pascalCase}}{{name}}{{/pascalCase}} = await remoteDataSource.{{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{name}}{{/pascalCase}}Body body{{/isHaveBody}});
+      final remote{{#pascalCase}}{{name}}{{/pascalCase}} = await remoteDataSource.{{method}}{{#pascalCase}}{{name}}{{/pascalCase}}(body);
       return Right(remote{{#pascalCase}}{{name}}{{/pascalCase}});
     } on DioError catch (e) {
       // The request was made and the server responded with a status code
