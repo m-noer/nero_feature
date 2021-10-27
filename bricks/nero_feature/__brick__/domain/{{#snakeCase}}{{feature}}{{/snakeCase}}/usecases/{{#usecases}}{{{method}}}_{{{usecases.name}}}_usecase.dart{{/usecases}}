@@ -11,7 +11,7 @@ class {{#pascalCase}}{{usecases.method}} {{usecases.name}}{{/pascalCase}}Usecase
   final {{#pascalCase}}{{feature}}{{/pascalCase}}Repository _repository;
 
   @override
-  Future<Either<Failure, {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity>> call({{#usecases.isHaveBody}}{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Body params{{/usecases.isHaveBody}}) {
+  Future<Either<Failure, {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity>> call({{#usecases.isHaveBody}}{{#pascalCase}}{{usecases.name}}{{/pascalCase}}Body params{{/usecases.isHaveBody}{{^usecases.isHaveBody}}NoParams params{{/usecases.isHaveBody}}}) {
     return _repository.{{#lowerCase}}{{usecases.method}}{{/lowerCase}}{{#pascalCase}}{{usecases.name}}{{/pascalCase}}({{#usecases.isHaveBody}}params{{/usecases.isHaveBody}});
   }
 }

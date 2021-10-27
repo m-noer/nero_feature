@@ -14,11 +14,13 @@ class {{#pascalCase}}{{feature}}{{/pascalCase}}RemoteDataSourceImpl implements {
   final Dio _client;
   {{#usecases}}
   @override
-  Future<{{#pascalCase}}{{name}}{{/pascalCase}}Entity> requestLogin({{#isHaveBody}}{{#pascalCase}}{{name}}{{/pascalCase}}Body body{{/isHaveBody}}) async {
+  Future<{{#pascalCase}}{{name}}{{/pascalCase}}Entity> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{name}}{{/pascalCase}}Body body{{/isHaveBody}}) async {
     try {
       final _response = await _client.{{#snakeCase}}{{method}}{{/snakeCase}}<Map<String, dynamic>>(
-        ApiPath.{{#snakeCase}}{{method}}{{/snakeCase}},
-        data: body.toJson(),
+        'url',
+        {{#isHaveBody}}
+        // TODO Add body
+        {{/isHaveBody}}
       );
 
       return {{#pascalCase}}{{name}}{{/pascalCase}}Model.fromJson(_response.data!);
