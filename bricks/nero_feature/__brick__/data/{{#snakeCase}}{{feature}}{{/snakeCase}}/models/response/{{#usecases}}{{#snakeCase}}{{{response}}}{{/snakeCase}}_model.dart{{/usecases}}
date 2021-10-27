@@ -4,7 +4,7 @@ import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase
 part '{{#snakeCase}}{{usecases.response}}{{/snakeCase}}_model.g.dart';
 
 @JsonSerializable(createToJson: false)
-class {{#pascalCase}}{{usecases.response}}{{/pascalCase}}Model extends {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity {
+class {{#pascalCase}}{{usecases.response}}{{/pascalCase}}Model extends {{#pascalCase}}{{usecases.response}}{{/pascalCase}}Entity {
   // TODO Add Model
 
   factory {{#pascalCase}}{{usecases.response}}{{/pascalCase}}Model.fromJson(Map<String, dynamic> json) =>

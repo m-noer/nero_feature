@@ -1,2 +1,2 @@
-{{#usecases}}export '{{#snakeCase}}{{name}}{{/snakeCase}}_entity.dart';
+{{#usecases}}export '{{#snakeCase}}{{response}}{{/snakeCase}}_entity.dart';
 {{/usecases}}

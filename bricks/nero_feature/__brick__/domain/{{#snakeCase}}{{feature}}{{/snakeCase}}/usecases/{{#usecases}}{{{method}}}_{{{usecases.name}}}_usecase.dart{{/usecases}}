@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/core/error/failures.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/core/usecases/usecase.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/data/{{#snakeCase}}{{feature}}{{/snakeCase}}/models/{{#snakeCase}}{{usecases.name}}_model{{/snakeCase}}.dart';
-import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/entities/{{#snakeCase}}{{usecases.name}}{{/snakeCase}}_entity.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/data/{{#snakeCase}}{{feature}}{{/snakeCase}}/models/models.dart';
+import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/entities/entities.dart';
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/repositories/{{#snakeCase}}{{feature}}{{/snakeCase}}_repository.dart';
 
 class {{#pascalCase}}{{usecases.method}} {{usecases.name}}{{/pascalCase}}Usecase extends UseCase<{{#pascalCase}}{{usecases.response}}{{/pascalCase}}Entity,{{#usecases.isHaveBody}}{{#pascalCase}}{{usecases.bodyName}}{{/pascalCase}}{{/usecases.isHaveBody}}{{^usecases.isHaveBody}} NoParams{{/usecases.isHaveBody}}> {
