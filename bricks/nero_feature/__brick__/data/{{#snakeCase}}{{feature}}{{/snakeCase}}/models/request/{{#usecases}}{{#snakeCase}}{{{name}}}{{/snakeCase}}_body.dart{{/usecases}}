@@ -1,0 +1,12 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part '{{#snakeCase}}{{usecases.name}}{{/snakeCase}}_model.g.dart';
+
+@JsonSerializable(createFromJson: false)
+class {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Body extends {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Entity {
+  // TODO Add Body
+
+  factory {{#pascalCase}}{{usecases.name}}{{/pascalCase}}Body.fromJson(Map<String, dynamic> json) =>
+      _${{#pascalCase}}{{usecases.name}}{{/pascalCase}}BodyFromJson(json);
+}
+
