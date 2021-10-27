@@ -1,7 +1,4 @@
-// response model
-{{#usecases}}export 'response/{{#snakeCase}}{{{name}}}{{/snakeCase}}_model.dart';
+{{#usecases}}export 'response/{{#snakeCase}}{{response}}{{/snakeCase}}_model.dart';
 {{/usecases}}
 
-// request body
-{{#usecases}}{{#isHaveBody}}export 'request/{{#snakeCase}}{{{name}}}{{/snakeCase}}_body.dart';{{/isHaveBody}}
-{{/usecases}}
+{{#usecases}}{{#isHaveBody}}{{^isBodyDataType}}export 'request/{{#snakeCase}}{{bodyName}}{{/snakeCase}}.dart';{{/isBodyDataType}}{{/isHaveBody}}{{/usecases}}

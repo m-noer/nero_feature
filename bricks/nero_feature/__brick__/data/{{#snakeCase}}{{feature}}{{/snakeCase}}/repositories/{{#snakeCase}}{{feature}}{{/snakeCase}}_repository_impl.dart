@@ -17,7 +17,7 @@ class {{#pascalCase}}{{feature}}{{/pascalCase}}RepositoryImpl implements {{#pasc
 
   {{#usecases}}
   @override
-  Future<Either<Failure, {{#pascalCase}}{{name}}{{/pascalCase}}Entity>> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{name}}{{/pascalCase}}Body body{{/isHaveBody}}) async {
+  Future<Either<Failure, {{#pascalCase}}{{response}}{{/pascalCase}}Entity>> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{bodyName}}{{/pascalCase}} body{{/isHaveBody}}) async {
     try {
       final remote{{#pascalCase}}{{name}}{{/pascalCase}} = await remoteDataSource.{{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}body{{/isHaveBody}});
       return Right(remote{{#pascalCase}}{{name}}{{/pascalCase}});

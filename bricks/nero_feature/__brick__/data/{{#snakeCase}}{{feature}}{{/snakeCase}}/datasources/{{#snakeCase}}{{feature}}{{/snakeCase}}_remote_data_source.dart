@@ -4,7 +4,7 @@ import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/data/{{#snakeCase}}
 import 'package:{{#snakeCase}}{{project_name}}{{/snakeCase}}/domain/{{#snakeCase}}{{feature}}{{/snakeCase}}/entities/entities.dart';
 
 abstract class {{#pascalCase}}{{feature}}{{/pascalCase}}RemoteDataSource {
-  {{#usecases}}Future<{{#pascalCase}}{{name}}{{/pascalCase}}Entity> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{name}}{{/pascalCase}}Body body{{/isHaveBody}});
+  {{#usecases}}Future<{{#pascalCase}}{{response}}{{/pascalCase}}Entity> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{bodyName}}{{/pascalCase}} body{{/isHaveBody}});
   {{/usecases}}
 }
 
@@ -14,7 +14,7 @@ class {{#pascalCase}}{{feature}}{{/pascalCase}}RemoteDataSourceImpl implements {
   final Dio _client;
   {{#usecases}}
   @override
-  Future<{{#pascalCase}}{{name}}{{/pascalCase}}Entity> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{name}}{{/pascalCase}}Body body{{/isHaveBody}}) async {
+  Future<{{#pascalCase}}{{response}}{{/pascalCase}}Entity> {{method}}{{#pascalCase}}{{name}}{{/pascalCase}}({{#isHaveBody}}{{#pascalCase}}{{bodyName}}{{/pascalCase}} body{{/isHaveBody}}) async {
     try {
       final _response = await _client.{{#snakeCase}}{{method}}{{/snakeCase}}<Map<String, dynamic>>(
         'url',
