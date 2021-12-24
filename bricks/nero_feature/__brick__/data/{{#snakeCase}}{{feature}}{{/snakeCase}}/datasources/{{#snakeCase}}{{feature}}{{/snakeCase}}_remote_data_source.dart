@@ -23,7 +23,7 @@ class {{#pascalCase}}{{feature}}{{/pascalCase}}RemoteDataSourceImpl implements {
         {{/isHaveBody}}
       );
 
-      return {{#pascalCase}}{{name}}{{/pascalCase}}Model.fromJson(_response.data!);
+      return {{#pascalCase}}{{response}}{{/pascalCase}}Model.fromJson(_response.data!);
     } on DioError catch (e) {
       throw DioError(
         requestOptions: e.requestOptions,
